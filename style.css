@@ -727,3 +727,162 @@ header {
         padding: 30px 20px;
     }
   }
+
+/* ===== Cakes Page Styling ===== */
+
+.cakes-page {
+    background: linear-gradient(135deg, #F5F0E8 0%, #E9D2A6 100%);
+    min-height: 100vh;
+    padding: 2rem 0;
+}
+
+.cakes-hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, rgba(245, 240, 232, 0.95) 0%, rgba(233, 210, 166, 0.95) 100%);
+    margin-bottom: 3rem;
+}
+
+.cakes-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: #8B6F47;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+.cakes-hero p {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: #4A2E1F;
+    font-style: italic;
+}
+
+.cakes-grid-wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.cakes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.cake-card {
+    background: #FBF7F2;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.cake-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15), 0 0 30px rgba(255, 215, 0, 0.6), 0 0 60px rgba(235, 180, 90, 0.4);
+}
+
+.cake-image {
+    width: 100%;
+    height: 280px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.cake-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+    pointer-events: none;
+}
+
+.cake-card:hover .cake-image {
+    transform: scale(1.08);
+}
+
+.cake-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cake-info h3 {
+    font-size: 1.4rem;
+    color: #8B6F47;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.flavour-desc {
+    font-size: 0.95rem;
+    color: #4A2E1F;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.cake-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(139, 111, 71, 0.2);
+}
+
+.cake-price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #8B6F47;
+}
+
+/* Responsive: 2 columns on medium screens */
+@media (max-width: 900px) {
+    .cakes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        gap: 1.5rem;
+    }
+}
+
+/* Responsive: 1 column on small screens */
+@media (max-width: 520px) {
+    .cakes-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, auto);
+        gap: 1rem;
+    }
+
+    .cake-image {
+        height: 220px;
+    }
+
+    .cakes-hero {
+        padding: 2.5rem 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .cakes-hero h1 {
+        font-size: 2rem;
+    }
+
+    .cake-info {
+        padding: 1rem;
+    }
+
+    .cake-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .cake-price {
+        font-size: 1.1rem;
+    }
+}
