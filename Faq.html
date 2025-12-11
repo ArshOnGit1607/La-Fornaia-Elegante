@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQs</title>
+<style>
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #fff8f3;
+}
+
+/* Header Banner */
+.faq-header {
+    background-image: url("./Images/bannerfaq.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    position: relative;
+}
+
+.faq-header .overlay {
+    background: rgba(255, 255, 255, 0.7);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.faq-header .small {
+    font-size: 28px;
+    color: #c38b66;
+    margin: 0;
+    font-weight: 500;
+}
+
+.faq-header .big {
+    font-size: 52px;
+    margin: 5px 0 0 0;
+    color: #000;
+    letter-spacing: 1px;
+}
+
+
+/* FAQ Container */
+.faq-container {
+    width: 75%;
+    margin: 50px auto;
+}
+
+.faq-item {
+    background: #ffffff;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #f1e3d6;
+    overflow: hidden;
+}
+
+/* Question Button */
+.faq-question {
+    width: 100%;
+    padding: 18px;
+    font-size: 17px;
+    font-weight: 600;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+}
+
+.faq-question::after {
+    content: "+";
+    font-size: 22px;
+    position: absolute;
+    right: 20px;
+}
+
+.faq-question.active::after {
+    content: "-";
+}
+
+/* Answer */
+.faq-answer {
+    padding: 0 18px;
+    background: #fff;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.faq-answer p {
+    padding: 15px 0;
+    margin: 0;
+    color: #444;
+}
+header {
+        background: linear-gradient(
+        135deg,
+        rgba(139, 111, 71, 0.9),
+        rgba(166, 138, 100, 0.9)
+    );
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 90rem;
+    margin: auto;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+}
+
+.logo {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+.logo:hover {
+    transform: rotate(360deg) scale(1.1);
+}
+
+.brand-name {
+    color: #fff;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+    list-style: none;
+}
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: clamp(0.9rem, 1.8vw, 1.3rem);
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: #ffd700;
+    transition: width 0.3s;
+}
+.nav-links a:hover {
+    color: #ffd700;
+}
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.cart-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.cart-icon {
+    width: 2rem;
+    height: 2rem;
+    filter: invert(1);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.cart-icon:hover {
+    transform: scale(1.2);
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ff4444;
+    color: #fff;
+    min-width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 0.3rem;
+    cursor: pointer;
+}
+.menu-toggle span {
+    width: 1.875rem;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+/* ---------- Footer ---------- */
+.Footer {
+    background: linear-gradient(180deg, #2b2a29 0%, #151312 100%);
+    color: #efe9e1;
+    padding: 3rem 5%;
+    font-family: 'Georgia', serif;
+}
+
+.Footer .Footer-content {
+    max-width: 90rem;
+    margin: 0 auto;
+}
+
+/* footer top */
+.Footer .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    grid-template-areas: "brand links contact hours";
+    gap: 2.5rem 2rem;
+    align-items: start;
+    padding-bottom: 1.75rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.Footer .footer-brand { grid-area: brand; }
+.Footer .footer-links { grid-area: links; }
+.Footer .footer-contact { grid-area: contact; }
+.Footer .footer-hours { grid-area: hours; }
+
+
+.Footer .brand-tag {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.Footer .footer-links,
+.Footer .footer-contact,
+.Footer .footer-hours {
+    min-width: 160px;
+}
+
+.Footer h4 {
+    color: #ffd700;
+    font-size: 1rem;
+    margin-bottom: 0.65rem;
+}
+
+.Footer ul { list-style: none; }
+.Footer ul li { margin: 0.4rem 0; }
+.Footer ul li a {
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-size: 0.98rem;
+}
+.Footer ul li a:hover { color: #ffd700; }
+
+.Footer p, .Footer a { color: rgba(255,255,255,0.85); font-size: 0.95rem; }
+.Footer a { text-decoration: none; }
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+
+.social {
+    display: flex;
+    gap: 0.75rem;
+}
+.social a img {
+    width: 1.9rem;
+    height: 1.9rem;
+    filter: brightness(0) invert(1);
+    opacity: 0.95;
+    transition: transform 0.2s, opacity 0.2s;
+}
+.social a img:hover { transform: translateY(-3px) scale(1.03); opacity: 1; }
+
+.copyright { color: rgba(255,255,255,0.65); font-size: 0.9rem; }
+.footer-image{
+ margin: 40px;
+}
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: #f3d2c1;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 42px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info h2,
+        .contact-form h2 {
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            line-height: 1.8;
+        }
+
+        .contact-form form input,
+        .contact-form form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #d8b8a6;
+            font-size: 16px;
+        }
+
+        .contact-form form button {
+            background: #d77a61;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .contact-form form button:hover {
+            background: #b85e47;
+        }
+
+        .map {
+            margin: 40px auto;
+            max-width: 900px;
+            padding: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f3d2c1;
+            margin-top: 40px;
+        }
+</style>
+</head>
+
+<body>
+        <!-- Nav Bar -->
+<header>
+        <nav class="navbar">
+            <a href="index.html" class="logo-section">
+             <img src="Images/logo.jpeg" alt="LA FORNAIA ELEGANTE Logo" class="logo">
+                <span class="brand-name">LA FORNAIA ELEGANTE</span>
+            </a>
+
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="cart-wrapper">
+                    <a href="cart.html">
+                        <img src="https://www.svgrepo.com/show/533043/cart-shopping.svg" alt="Shopping Cart" class="cart-icon">
+                        <span class="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+<!-- Header Section -->
+<section class="faq-header">
+    <div class="overlay">
+        <h2 class="small">Ask Away!</h2>
+        <h1 class="big" style="font-size: 4.5rem;">FAQs</h1>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-container">
+
+    <div class="faq-item">
+        <button class="faq-question">Which is the best way to contact you?</button>
+        <div class="faq-answer">
+            <p>We are quickest on WhatsApp! Send us a message anytime and our team will respond shortly.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">What are your working hours?</button>
+        <div class="faq-answer">
+            <p>We are open daily from <strong>7:00 AM to 7:00 PM</strong>. Orders can be placed anytime during working hours.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">Do you provide delivery?</button>
+        <div class="faq-answer">
+            <p>Yes! We deliver across the city through our delivery partners. Delivery charges vary based on distance.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">What is the minimum weight for themed cakes?</button>
+        <div class="faq-answer">
+            <p>The minimum order for customized/theme cakes starts from <strong>1 kg</strong>. Complex designs may require 2 kg or more.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">How early should I place a custom cake order?</button>
+        <div class="faq-answer">
+            <p>We recommend placing custom cake orders at least <strong>2–3 days in advance</strong>. For large or intricate cakes, 5+ days is ideal.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">Do you offer same-day cakes?</button>
+        <div class="faq-answer">
+            <p>Yes, we offer a selection of ready-made cakes for same-day pickup. Availability depends on daily stock.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">Are your products eggless?</button>
+        <div class="faq-answer">
+            <p>We offer both egg and eggless options. All eggless desserts are clearly labeled and baked separately.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">Do you have vegan or gluten-free options?</button>
+        <div class="faq-answer">
+            <p>Yes! We offer limited vegan and gluten-free desserts. Please contact us to check availability.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">Can I customize flavors and fillings?</button>
+        <div class="faq-answer">
+            <p>Absolutely! You can choose your preferred sponge, filling, frosting, and design. Share your ideas with us.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">Do you take bulk or corporate orders?</button>
+        <div class="faq-answer">
+            <p>Yes, we handle bulk festive orders, hampers, and corporate gifting. Contact us for special pricing.</p>
+        </div>
+    </div>
+
+</section>
+<!-- Footer -->
+    <Footer class="Footer">
+        <div class="Footer-content">
+            <div class="footer-top">
+                <div class="footer-image">
+                    <img src="https://www.svgrepo.com/show/404627/bakery-baking-bread-food-restaurant.svg" alt="image" height="100px" width="100px">
+                    <img src="https://www.svgrepo.com/show/482028/donut-2.svg" alt="image" height="100px" width="100px">
+                    <img src="https://www.svgrepo.com/show/317230/croissant-love-france-national-culture-paris.svg" alt="image" height="100px" width="100px">
+                </div>
+                <div class="footer-links">
+                    <h4>Info</h4>
+                    <ul>
+                        <li><a href="./ourstory.html">OUR STORY</a></li>
+                        <li><a href="./Blog.html">BLOGS</a></li>
+                        <li><a href="./PrivacyPolicy.html">PRIVACY POLICY</a></li>
+                        <li><a href="./Refund.html">REFUND POLICY</a></li>
+            
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>Connaught Place,Delhi,India</p><br>
+                    <p>Phone: <a href="tel:+91 123456897">+91 123456897</a></p><br>
+                    <p>Email: <a href="mailto:info@lafornaia.com">info@lafornaia.com</a></p>
+                </div>
+
+                <div class="footer-hours">
+
+                    <h4>Opening Hours</h4>
+                    <p>Mon–Fri: 7:00 — 19:00</p><br>
+                    <p>Sat–Sun: 8:00 — 17:00</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="social">
+                    <a href="https://www.instagram.com/_rishi1210_/" aria-label="Instagram"><img src="https://www.svgrepo.com/show/506511/instagram.svg" alt="Instagram"></a>
+                    <a href="#" aria-label="Facebook"><img src="https://www.svgrepo.com/show/503338/facebook.svg" alt="Facebook"></a>
+                    <a href="#" aria-label="Twitter"><img src="https://www.svgrepo.com/show/506685/twitter.svg" alt="Twitter"></a>
+                </div>
+                <p class="copyright">© 2025 LA FORNAIA ELEGANTE. All rights reserved.</p>
+            </div>
+        </div>
+    </Footer> 
+
+<script>
+// Simple Accordion
+const faqs = document.querySelectorAll(".faq-question");
+
+faqs.forEach(faq => {
+    faq.addEventListener("click", () => {
+        faq.classList.toggle("active");
+        let answer = faq.nextElementSibling;
+        if (answer.style.maxHeight) {
+            answer.style.maxHeight = null;
+        } else {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+    });
+});
+</script>
+
+</body>
+</html>
