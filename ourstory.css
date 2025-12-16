@@ -11,7 +11,7 @@ body {
 
 
 
-.navbar{
+/* .navbar{
         background: linear-gradient(
         135deg,
         rgba(139, 111, 71, 0.9),
@@ -19,19 +19,19 @@ body {
     );
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     top: 0;
-    position: sticky;
+    position: relative;
     top: 0;
     z-index: 1000;
-}
+} */
 
-.navbar {
+/* .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
     max-width: 90rem;
     margin: auto;
-}
+} */
 
 .logo-section {
     display: flex;
@@ -238,6 +238,10 @@ body {
   padding: 20px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-top: 7.5rem;
+}
+@media (max-width: 48rem) {
+  #story { margin-top: 10rem; }
 }
 
 header h1 {
@@ -312,7 +316,6 @@ ul li{
     list-style-type: none;
 }
 
-/* Mobile navbar behaviour (keeps header responsive) */
 @media (max-width: 48rem) {
     .navbar {
         flex-wrap: wrap;

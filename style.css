@@ -22,7 +22,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 1001;
 }
 .navbar {
   display: flex;
@@ -212,7 +212,7 @@ header {
   white-space: nowrap;
   text-align: center;
 }
-.video-text p {
+.video-text h4{
   font-size: 1.2rem;
   opacity: 0.9;
 }
@@ -1063,7 +1063,7 @@ header {
     letter-spacing: 1px;
   }
 
-  .video-text p {
+  .video-text h4{
     font-size: 1rem;
   }
 }
@@ -1072,7 +1072,7 @@ header {
     font-size: 1.8rem;
   }
 
-  .video-text p {
+  .video-text h4 {
     font-size: 0.95rem;
   }
 }
